@@ -1,7 +1,5 @@
 package ru.netology;
 
-import java.util.Arrays;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -32,7 +30,7 @@ public class MovieManTest {
             manager.addMovie(testMovieList[i]);
         }
 
-        Assertions.assertEquals(Arrays.toString(testMovieList), manager.findAll());
+        Assertions.assertArrayEquals(testMovieList, manager.findAll());
     }
 
     @Test
@@ -43,9 +41,9 @@ public class MovieManTest {
         }
 
         String[] expected = java.util.Arrays.copyOfRange(testMovieList, 1, 6);
-        String actual = manager.findLast();
+        String[] actual = manager.findLast();
 
-        Assertions.assertEquals(Arrays.toString(expected), actual);
+        Assertions.assertArrayEquals(expected, actual);
 
         MovieMan manager2 = new MovieMan(3);
         for (int i=0; i<testMovieList.length; i++){
@@ -55,6 +53,6 @@ public class MovieManTest {
         expected = java.util.Arrays.copyOfRange(testMovieList, 3, 6);
         actual = manager2.findLast();
 
-        Assertions.assertEquals(Arrays.toString(expected), actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 }

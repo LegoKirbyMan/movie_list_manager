@@ -1,7 +1,5 @@
 package ru.netology;
 
-import java.util.Arrays;
-
 public class MovieMan {
 
     private String[] movieList;
@@ -31,12 +29,12 @@ public class MovieMan {
         }
     }
 
-    public String findAll() {
-        return Arrays.toString(movieList);
+    public String[] findAll() {
+        return movieList;
     }
 
-    public String findLast() {
+    public String[] findLast() {
         String[] tmp = java.util.Arrays.copyOfRange(movieList, movieList.length - findLastLength, movieList.length);
-        return Arrays.toString(tmp);
+        return tmp;
     }
 }
