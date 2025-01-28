@@ -16,7 +16,7 @@ public class MovieMan {
     public String[] getList() {
         return movieList;
     }
-    
+
     public void addMovie(String title) {
         if (movieList != null) {
             String[] tmp = new String[movieList.length + 1];
